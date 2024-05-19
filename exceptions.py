@@ -1,28 +1,34 @@
-class NotForSending(Exception):
-    """Не для пересылки в телеграм."""
+class EmptyAPIResponse(Exception):
+    """Возвращается пустой словарь ответа API."""
+
     pass
 
 
-class ProblemDescriptions(Exception):
-    """Описания проблемы."""
+class HomeworkStatusError(Exception):
+    """Возвращается некорректный статус домашней работы."""
+
     pass
 
 
-class InvalidResponseCode(Exception):
-    """Не верный код ответа."""
+class HttpStatusNotOK(Exception):
+    """Возвращается код, отличный от 200."""
+
     pass
 
 
-class ConnectinError(Exception):
-    """Не верный код ответа."""
+class NoHomeworkNameKey(Exception):
+    """Нет ключа `homework_name`."""
+
     pass
 
 
-class EmptyResponseFromAPI(NotForSending):
-    """Пустой ответ от API."""
+class RequestError(Exception):
+    """Ошибка при запросе к эндпоинту."""
+
     pass
 
 
-class TelegramError(NotForSending):
-    """Ошибка телеграма."""
+class TokensAccessError(Exception):
+    """Переменные окружения недоступны."""
+
     pass
