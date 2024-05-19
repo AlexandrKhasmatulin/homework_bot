@@ -27,7 +27,7 @@ HOMEWORK_STATUSES = {
 
 
 def send_message(bot, message):
-    """Отправление сообщения пользователю в Телеграм """
+    """Отправление сообщения пользователю в Телеграм."""
     try:
         logging.info('Начало отправки')
         bot.send_message(
@@ -42,7 +42,7 @@ def send_message(bot, message):
 
 
 def get_api_answer(current_timestamp):
-    """Получение информации о статусе домашней работы"""
+    """Получение информации о статусе домашней работы."""
     timestamp = current_timestamp or int(time.time())
     params_request = {
         'url': ENDPOINT,
@@ -70,7 +70,7 @@ def get_api_answer(current_timestamp):
 
 
 def check_response(response):
-    """Проверка полученной информации"""
+    """Проверка полученной информации."""
     logging.debug('Начало проверки')
     if not isinstance(response, dict):
         raise TypeError('Ошибка в типе ответа API')
