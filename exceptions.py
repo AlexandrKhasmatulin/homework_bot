@@ -32,3 +32,8 @@ class TokensAccessError(Exception):
     """Переменные окружения недоступны."""
 
     pass
+
+
+class JsonDecodeError(Exception):
+    """Ошибка декодирования Json"""
+    pass
