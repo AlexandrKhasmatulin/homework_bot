@@ -77,7 +77,6 @@ def check_response(response: dict) -> list:
     raise TypeError('В ответе API домашки `response` по типу не является словарем.')
 
 
-
 def parse_status(homework: dict) -> str:
     """Извлекается информация о домашней работе и статус этой работы."""
     try:
