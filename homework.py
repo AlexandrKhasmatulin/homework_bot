@@ -8,8 +8,10 @@ import requests
 import telegram.ext
 from dotenv import load_dotenv
 
-from exceptions import (EmptyAPIResponse, HttpStatusNotOK, HomeworkStatusError,
-                        NoHomeworkNameKey, RequestError, TokensAccessError, JsonDecodeError)
+from exceptions import (EmptyAPIResponse, HttpStatusNotOK,
+                        HomeworkStatusError,
+                        NoHomeworkNameKey, RequestError,
+                        TokensAccessError, JsonDecodeError)
 
 load_dotenv()
 
@@ -70,11 +72,14 @@ def check_response(response: dict) -> list:
         try:
             homeworks = response.get('homeworks')
             if not isinstance(homeworks, list):
-                raise TypeError('В ответе API домашки под ключом `homeworks` данные приходят не в виде списка.')
+                raise TypeError('В ответе API домашки под ключом `homeworks` '
+                                'данные приходят не в виде списка.')
             return homeworks
         except KeyError:
-            raise EmptyAPIResponse('В ответе API домашки нет ключа `homeworks`.')
-    raise TypeError('В ответе API домашки `response` по типу не является словарем.')
+            raise EmptyAPIResponse('В ответе API '
+                                   'домашки нет ключа `homeworks`.')
+    raise TypeError('В ответе API домашки `response` '
+                    'по типу не является словарем.')
 
 
 def parse_status(homework: dict) -> str:
